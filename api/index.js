@@ -3,9 +3,9 @@ const cors = require('cors')
 const routerApi = require('./routes/index');
 const {logErrors,errorHandler,boomErrorHandler} = require('./middlewares/error.handler')
 const app =  express();
-const port=3000;
+const port = process.env.PORT || 3000;
 app.use(express.json())
-app.get('/',(req,res)=>{
+app.get('/api',(req,res)=>{
   res.send('Este es mi server en express')
 })
 const whitelist =['http://localhost:3000','http://127.0.0.1:5500']
